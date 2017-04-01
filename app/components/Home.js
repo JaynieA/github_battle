@@ -1,9 +1,9 @@
-const React = require('react');
+import React from 'react';
 
 class Home extends React.Component{
   render() {
     return <div> Hello from Home! </div>
-  }
-}
+  } // end render
+} // end Home
 
-module.exports = Home;
+export default Home;

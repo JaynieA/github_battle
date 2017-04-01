@@ -1,14 +1,10 @@
-//Contains all of the declarative routes for our app
-const React = require('react');
-const ReactRouter = require('react-router');
-const Router = ReactRouter.Router;
-const Route = ReactRouter.Route;
-const IndexRoute = ReactRouter.IndexRoute;
-const hashHistory = ReactRouter.hashHistory;
-
-//require components to route to
-const Main = require('../components/Main');
-const Home = require('../components/Home');
+/* Contains all of the declarative
+   routes for our app */
+import React from 'react';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+//Import components to route to
+import Main from '../components/Main';
+import Home from '../components/Home';
 
 //Build our routes
 const routes = (
@@ -17,7 +13,7 @@ const routes = (
       <Route path='/home' component={Home}/>
     </Route>
   </Router>
-);
+); // end routes
 
 // //Export our routes from this file
-module.exports = routes;
+export default routes;

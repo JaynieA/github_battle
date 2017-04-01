@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 class Main extends React.Component{
   render() {
@@ -8,6 +8,6 @@ class Main extends React.Component{
             </div>
     ) // end return
   } // end render
-} // end Main 
+} // end Main
 
-module.exports = Main;
+export default Main;
