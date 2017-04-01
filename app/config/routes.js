@@ -4,8 +4,7 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
-const ReactRouterDom = require('react-router-dom');
-const HashRouter = ReactRouterDom.HashRouter;
+const hashHistory = ReactRouter.hashHistory;
 
 //require components to route to
 const Main = require('../components/Main');
@@ -13,13 +12,12 @@ const Home = require('../components/Home');
 
 //Build our routes
 const routes = (
-  <HashRouter>
-    <div>
-      <Route path='/' component={ Main } />
-      <Route path='/home' component={ Home } />
-    </div>
-   </HashRouter >
+  <Router history={hashHistory}>
+    <Route path='/' component={Main}>
+      <Route path='/home' component={Home}/>
+    </Route>
+  </Router>
 );
 
-//Export our routes from this file
+// //Export our routes from this file
 module.exports = routes;
