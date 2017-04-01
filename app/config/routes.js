@@ -9,8 +9,10 @@ import Home from '../components/Home';
 //Build our routes
 const routes = (
   <Router history={hashHistory}>
+    //No matter what path someone goes to, always make sure the Main component is active
     <Route path='/' component={Main}>
-      <Route path='/home' component={Home}/>
+      //Use IndexRoute to activate Home component only when none of the following routes are active
+      <IndexRoute component={Home}/>
     </Route>
   </Router>
 ); // end routes
