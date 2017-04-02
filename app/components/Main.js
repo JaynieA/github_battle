@@ -1,10 +1,10 @@
-import React from 'react';
+import React  from 'react';
 
 class Main extends React.Component{
   render() {
     return (
             <div className='main-container'>
-              { this.props.children }
+              Hello from Main! { this.props.children }
             </div>
     ) // end return
   } // end render
