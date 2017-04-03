@@ -1,8 +1,21 @@
 import React from 'react';
+import styles from '../styles/index';
+import { Link } from 'react-router';
+const transparentBg = styles.transparentBg;
 
-class Home extends React.Component{
+class Home extends React.Component {
   render() {
-    return <div> Hello from Home! </div>
+    return (
+      <div className='jumbotron col-sm-12 text-center' style={transparentBg}>
+        <h1>Github Battle</h1>
+        <p className='lead'>Some fancy motto</p>
+        <Link to='/playerOne'>
+          <button type="button" className='btn btn-large btn-success'>
+            Get Started
+          </button>
+        </Link>
+      </div>
+    )
   } // end render
 } // end Home
 
