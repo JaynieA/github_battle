@@ -2,9 +2,9 @@
 import React from 'react';
 
 function ConfirmBattle(props) {
-  return (
-    <div>Confirm Battle</div>
-  )
+  return props.isLoading === true
+    ? <p> LOADING! </p>
+    : <p> CONFIRM BATTLE </p>
 }
 
 export default ConfirmBattle;
