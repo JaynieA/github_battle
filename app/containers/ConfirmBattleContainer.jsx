@@ -45,9 +45,20 @@ class ConfirmBattleContainer extends React.Component {
     console.log('componentWillUnmount');
   }
 
+  handleInitiateBattle() {
+    this.context.router.push({
+      pathname: '/results',
+      //push playersInfo through to /results route
+      state: {
+        playersInfo: this.state.playersInfo
+      }
+    })
+  }
+
   render() {
     return <ConfirmBattle
               isLoading={this.state.isLoading}
+              onInitiateBattle={this.handleInitiateBattle}
               playersInfo={this.state.playersInfo}/>
   }
 }
