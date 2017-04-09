@@ -2,11 +2,13 @@ import axios from 'axios';
 
 /* Get API keys from github api and
    enter them here to prevent rate limiting */
-let token = process.env.GITHUB_API_TOKEN;
+let id = process.env.GITHUB_API_ID;
+let sec = process.env.GITHUB_API_SECRET;
+let param = "?client_id=" + id + "&client_secret=" + sec;
 
 function getUserInfo(username) {
   //axios.get will return a promise
-  return axios.get('https://api.github.com/?access_token=' + token);
+  return axios.get('https://api.github.com/users/' + username + param);
 }
 
 let helpers = {

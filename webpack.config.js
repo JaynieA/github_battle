@@ -24,6 +24,6 @@ module.exports = {
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    new webpack.EnvironmentPlugin(['GITHUB_API_TOKEN'])
+    new webpack.EnvironmentPlugin(['GITHUB_API_ID', 'GITHUB_API_SECRET'])
   ]
 };
