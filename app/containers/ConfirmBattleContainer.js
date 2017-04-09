@@ -18,6 +18,7 @@ class ConfirmBattleContainer extends React.Component {
     console.log('componentWillMount');
   }
   //Runs once a component has rendered
+  //Most of your 'side effects' will go inside of `componentDidMount`
   componentDidMount() {
     //grab usernames and fetch their info from the GitHub API
     let query = this.props.location.query;
