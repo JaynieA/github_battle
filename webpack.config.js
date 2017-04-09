@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -21,5 +22,8 @@ module.exports = {
       {test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader'}
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new webpack.EnvironmentPlugin(['GITHUB_API_TOKEN'])
+  ]
 };

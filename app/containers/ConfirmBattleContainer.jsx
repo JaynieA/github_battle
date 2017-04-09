@@ -1,5 +1,6 @@
 import React from 'react';
 import ConfirmBattle from '../components/ConfirmBattle';
+import githubHelpers from '../utils/githubHelpers';
 
 class ConfirmBattleContainer extends React.Component {
   constructor(props: Object, context: Object) {
@@ -23,7 +24,17 @@ class ConfirmBattleContainer extends React.Component {
     //grab usernames and fetch their info from the GitHub API
     let query = this.props.location.query;
     console.log('componentDidMount query-->', query);
-    //TODO: Fetch info from github then update the state
+    //Fetch info from github then update the state
+    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+    //call .then on the promise returned from getPlayersInfo's .then
+    .then( function( players ) {
+      console.log('PLAYERS-->', players );
+      this.setState({
+        isLoading: false,
+        playersInfo: [players[0], players[1]]
+      });
+    //bind `this` from the outer function to this in setState
+    }.bind(this));
   }
   //Runs anytime this component receives props
   componentWillReceiveProps() {
