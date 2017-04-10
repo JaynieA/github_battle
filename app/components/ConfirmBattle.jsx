@@ -5,12 +5,11 @@ import styles from '../styles/index';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 
-function puke(object) {
-  return <pre>{JSON.stringify(object, null, ' ')}</pre>
-}
+// function puke(object) {
+//   return <pre>{JSON.stringify(object, null, ' ')}</pre>
+// }
 
 function ConfirmBattle(props) {
-  console.log('hi-->', props);
   return props.isLoading === true
     ? <p> LOADING! </p>
     : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>

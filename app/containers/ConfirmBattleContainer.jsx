@@ -10,6 +10,8 @@ class ConfirmBattleContainer extends React.Component {
       isLoading: true,
       playersInfo: []
     }; // end state
+    //Bind this for event listeners
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
   } // end constructor
   /*
    ** ==== LifeCycle Events ===== **
@@ -46,6 +48,7 @@ class ConfirmBattleContainer extends React.Component {
   }
 
   handleInitiateBattle() {
+    console.log('init battle-->',this);
     this.context.router.push({
       pathname: '/results',
       //push playersInfo through to /results route
