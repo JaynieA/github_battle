@@ -2,8 +2,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from '../styles/index';
-const transparentBg = styles.transparentBg;
 import UserDetails from './UserDetails';
+import UserDetailsWrapper from './UserDetailsWrapper';
 
 function puke(object) {
   return <pre>{JSON.stringify(object, null, ' ')}</pre>
@@ -16,14 +16,15 @@ function ConfirmBattle(props) {
     : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
         <h1 className='text-center'> Confirm Battle </h1>
         <div className='col-sm-8 col-sm-offset-2'>
-          <div className='col-sm-6'>
-            <p className='lead'>Player 1</p>
+
+          <UserDetailsWrapper header='Player One'>
             <UserDetails info={props.playersInfo[0]}/>
-          </div>
-          <div className='col-sm-6'>
-            <p className='lead'>Player 1</p>
+          </UserDetailsWrapper>
+
+          <UserDetailsWrapper header='Player Two'>
             <UserDetails info={props.playersInfo[1]}/>
-          </div>
+          </UserDetailsWrapper>
+
         </div>
         <div className='col-sm-8 col-sm-offset-2'>
           <div className='col-sm-12' style={styles.space}>

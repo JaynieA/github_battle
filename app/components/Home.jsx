@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from '../styles/index';
 import { Link } from 'react-router';
-const transparentBg = styles.transparentBg;
 
 class Home extends React.Component {
   render() {
     return (
-      <div className='jumbotron col-sm-12 text-center' style={transparentBg}>
+      <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
         <h1>Github Battle</h1>
         <p className='lead'>Some fancy motto</p>
         <Link to='/playerOne'>

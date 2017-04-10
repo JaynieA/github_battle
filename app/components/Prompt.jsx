@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react';
 import styles from '../styles/index';
-const transparentBg = styles.transparentBg;
 
 /* This handles the UI creation from PromptContainer
    (this is a functional stateless component) */
 function Prompt (props) {
   return (
-    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
+    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={styles.transparentBg}>
       <h1>{props.header}</h1>
       <div className="col-sm-12">
         <form onSubmit={props.onSubmitUser}>
