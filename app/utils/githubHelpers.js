@@ -21,7 +21,7 @@ function getTotalStars(repos) {
   //Loop over the data property on these repos, add up stargazers_count
   return repos.data.reduce(function(prev, current) {
     return prev + current.stargazers_count;
-  });
+  }, 0);
 }
 
 function getPlayersData(player) {

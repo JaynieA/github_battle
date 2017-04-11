@@ -4,7 +4,6 @@ import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 
 function Results ( props ) {
-  console.log('HI THERE-->',props);
   let winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
   let losingIndex = winningIndex === 0 ? 1 : 0;
   return (
